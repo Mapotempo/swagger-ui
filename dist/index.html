@@ -37,7 +37,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://petstore.swagger.io/v2/swagger.json";
+        url = "https://app.mapotempo.com/api/0.1/swagger_doc";
       }
 
       hljs.configure({
@@ -91,8 +91,19 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io"><img class="logo__img" alt="swagger" height="30" width="30" src="images/logo_small.png" /><span class="logo__title">swagger</span></a>
     <form id='api_selector'>
+      <div class='input icon-btn'>
+        <a href="?url=https://app.mapotempo.com/api/0.1/swagger_doc"><img src="images/mapotempo-api.png" title="Show Mapotempo Apis-0.1"></a>
+        <a href="?url=https://app.beta.mapotempo.com/api/0.1/swagger_doc"><img src="images/mapotempo-api-beta.png" title="Show Mapotempo-Beta Apis-0.1"></a>
+        <a href="?url=https://app.mapotempo.com/api-web/0.1/swagger_doc.json"><img src="images/mapotempo-web.png" title="Show Mapotempo Web-Apis-0.1"></a>
+        <a href="?url=https://app.beta.mapotempo.com/api-web/0.1/swagger_doc.json"><img src="images/mapotempo-web-beta.png" title="Show Mapotempo-Beta Web-Apis-0.1"></a>
+        <a href="?url=https://geocode.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-geocode.png" title="Show Geocode Apis-0.1"></a>
+        <a href="?url=https://geocode.beta.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-geocode-beta.png" title="Show Geocode-Beta Apis-0.1"></a>
+        <a href="?url=https://router.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-router.png" title="Show Router Apis-0.1"></a>
+        <a href="?url=https://router.beta.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-router-beta.png" title="Show Router-Beta Apis-0.1"></a>
+        <a href="?url=https://optimizer.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-optimizer.png" title="Show Optimizer Apis-0.1"></a>
+        <a href="?url=https://optimizer.beta.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-optimizer-beta.png" title="Show Optimizer-Beta Apis-0.1"></a>
+      </div>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
       <div id='auth_container'></div>
       <div class='input'><a id="explore" class="header__btn" href="#" data-sw-translate>Explore</a></div>
