@@ -67,6 +67,8 @@
           if(window.SwaggerTranslator) {
             window.SwaggerTranslator.translate();
           }
+
+          addApiKeyAuthorization();
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -76,6 +78,17 @@
         defaultModelRendering: 'schema',
         showRequestHeaders: false
       });
+
+      function addApiKeyAuthorization(){
+        var key = encodeURIComponent($('#input_apiKey')[0].value);
+        if(key && key.trim() != "") {
+            var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
+            window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
+            log("added key " + key);
+        }
+      }
+
+      $('#input_apiKey').change(addApiKeyAuthorization);
 
       window.swaggerUi.load();
 
@@ -105,7 +118,7 @@
         <a href="?url=https://optimizer.beta.mapotempo.com/0.1/swagger_doc"><img src="images/mapotempo-optimizer-beta.png" title="Show Optimizer-Beta Apis-0.1"></a>
       </div>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div id='auth_container'></div>
+      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
       <div class='input'><a id="explore" class="header__btn" href="#" data-sw-translate>Explore</a></div>
     </form>
   </div>
